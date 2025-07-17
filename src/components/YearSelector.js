@@ -5,14 +5,14 @@ import handleKeyboardNavigation from '../shared/keyboardNavigation';
 import { useLocaleUtils } from '../shared/hooks';
 
 const YearSelector = ({
-  isOpen,
-  activeDate,
-  onYearSelect,
-  selectorStartingYear,
-  selectorEndingYear,
-  maximumDate,
-  minimumDate,
-  locale,
+  isOpen = false,
+  activeDate = null,
+  onYearSelect = () => {},
+  selectorStartingYear = 0,
+  selectorEndingYear = 0,
+  maximumDate = null,
+  minimumDate = null,
+  locale = 'en',
 }) => {
   const wrapperElement = useRef(null);
   const yearListElement = useRef(null);
@@ -89,11 +89,6 @@ const YearSelector = ({
       </div>
     </div>
   );
-};
-
-YearSelector.defaultProps = {
-  selectorStartingYear: 0,
-  selectorEndingYear: 0,
 };
 
 export default YearSelector;

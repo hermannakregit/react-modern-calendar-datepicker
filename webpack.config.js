@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.join(__dirname, 'playground/src/index.html'),
   filename: './index.html',
+  inject: true,
+  chunksSortMode: 'none',
 });
 
 module.exports = {

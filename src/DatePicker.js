@@ -6,34 +6,34 @@ import { getValueType } from './shared/generalUtils';
 import { TYPE_SINGLE_DATE, TYPE_MUTLI_DATE, TYPE_RANGE } from './shared/constants';
 
 const DatePicker = ({
-  value,
+  value = null,
   onChange,
-  formatInputText,
-  inputPlaceholder,
-  inputClassName,
-  inputName,
-  renderInput,
-  wrapperClassName,
-  calendarClassName,
-  calendarTodayClassName,
-  calendarSelectedDayClassName,
-  calendarRangeStartClassName,
-  calendarRangeBetweenClassName,
-  calendarRangeEndClassName,
-  calendarPopperPosition,
-  disabledDays,
-  onDisabledDayError,
-  colorPrimary,
-  colorPrimaryLight,
-  slideAnimationDuration,
-  minimumDate,
-  maximumDate,
-  selectorStartingYear,
-  selectorEndingYear,
-  locale,
-  shouldHighlightWeekends,
-  renderFooter,
-  customDaysClassName,
+  formatInputText = () => '',
+  inputPlaceholder = '',
+  inputClassName = '',
+  inputName = '',
+  renderInput = undefined,
+  wrapperClassName = '',
+  calendarClassName = '',
+  calendarTodayClassName = '',
+  calendarSelectedDayClassName = '',
+  calendarRangeStartClassName = '',
+  calendarRangeBetweenClassName = '',
+  calendarRangeEndClassName = '',
+  calendarPopperPosition = 'auto',
+  disabledDays = [],
+  onDisabledDayError = () => {},
+  colorPrimary = '#0eca2d',
+  colorPrimaryLight = '#cff4d5',
+  slideAnimationDuration = '0.4s',
+  minimumDate = null,
+  maximumDate = null,
+  selectorStartingYear = 0,
+  selectorEndingYear = 0,
+  locale = 'en',
+  shouldHighlightWeekends = false,
+  renderFooter = () => null,
+  customDaysClassName = [],
 }) => {
   const calendarContainerElement = useRef(null);
   const inputElement = useRef(null);
@@ -192,12 +192,6 @@ const DatePicker = ({
       )}
     </div>
   );
-};
-
-DatePicker.defaultProps = {
-  wrapperClassName: '',
-  locale: 'en',
-  calendarPopperPosition: 'auto',
 };
 
 export default DatePicker;

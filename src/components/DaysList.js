@@ -12,24 +12,24 @@ import handleKeyboardNavigation from '../shared/keyboardNavigation';
 import { useLocaleUtils, useLocaleLanguage } from '../shared/hooks';
 
 const DaysList = ({
-  activeDate,
-  value,
-  monthChangeDirection,
-  onSlideChange,
-  disabledDays,
-  onDisabledDayError,
-  minimumDate,
-  maximumDate,
-  onChange,
-  locale,
-  calendarTodayClassName,
-  calendarSelectedDayClassName,
-  calendarRangeStartClassName,
-  calendarRangeEndClassName,
-  calendarRangeBetweenClassName,
-  shouldHighlightWeekends,
-  isQuickSelectorOpen,
-  customDaysClassName,
+  activeDate = null,
+  value = null,
+  monthChangeDirection = '',
+  onSlideChange = () => {},
+  disabledDays = [],
+  onDisabledDayError = () => {},
+  minimumDate = null,
+  maximumDate = null,
+  onChange = () => {},
+  locale = 'en',
+  calendarTodayClassName = '',
+  calendarSelectedDayClassName = '',
+  calendarRangeStartClassName = '',
+  calendarRangeEndClassName = '',
+  calendarRangeBetweenClassName = '',
+  shouldHighlightWeekends = false,
+  isQuickSelectorOpen = false,
+  customDaysClassName = [],
 }) => {
   const calendarSectionWrapper = useRef(null);
   const { isRtl, weekDays: weekDaysList } = useLocaleLanguage(locale);
@@ -274,18 +274,6 @@ const DaysList = ({
       </div>
     </div>
   );
-};
-
-DaysList.defaultProps = {
-  onChange: () => {},
-  onDisabledDayError: () => {},
-  disabledDays: [],
-  calendarTodayClassName: '',
-  calendarSelectedDayClassName: '',
-  calendarRangeStartClassName: '',
-  calendarRangeBetweenClassName: '',
-  calendarRangeEndClassName: '',
-  shouldHighlightWeekends: false,
 };
 
 export default DaysList;
